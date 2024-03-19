@@ -1,0 +1,26 @@
+﻿@model ML.Producto
+@{
+    ViewData["Title"] = "WebScrapping";
+}
+
+<h1>WebScrapping</h1>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Ruta de la imagen</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (ML.Producto producto in Model.Productos)
+        {
+            <tr>
+                <td>@producto.Nombre</td>
+                <td><img src="@producto.RutaImagen" width="50" height="50" /></td>
+                <td>@producto.Precio</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
